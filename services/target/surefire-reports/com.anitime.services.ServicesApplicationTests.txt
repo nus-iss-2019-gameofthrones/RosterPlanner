@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: com.anitime.services.ServicesApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 3.507 s <<< FAILURE! - in com.anitime.services.ServicesApplicationTests
+contextLoads(com.anitime.services.ServicesApplicationTests)  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: java.lang.IllegalStateException: Failed to execute CommandLineRunner
+Caused by: org.springframework.orm.jpa.JpaSystemException: ids for this class must be manually assigned before calling save(): com.anitime.services.model.Skill; nested exception is org.hibernate.id.IdentifierGenerationException: ids for this class must be manually assigned before calling save(): com.anitime.services.model.Skill
+Caused by: org.hibernate.id.IdentifierGenerationException: ids for this class must be manually assigned before calling save(): com.anitime.services.model.Skill
+
