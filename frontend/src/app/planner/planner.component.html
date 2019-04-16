@@ -1,0 +1,114 @@
+  <form name="form" #f="ngForm" (ngSubmit)="solve()" novalidate class="feedback-form">
+  <div>
+  
+  </div>
+  
+  <br>
+  <div>
+  <h5><span class="badge badge-info">Search Employees</span></h5>
+  <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Employee</th>
+          <th>Grade</th>
+          <th *ngFor="let shift of availableShiftsHeader" style="width:50px; max-width:50px;">{{shift}}</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <select id="empSel" style="width:100%;" (change)="selectOption($event)">
+              <option value=""></option>
+              <option [value]="emp.id" *ngFor="let emp of employees">{{emp.firstName}} {{emp.lastName}}</option>
+            </select></td>
+          <td >{{ empGrade }}</td>
+          <td *ngFor="let shift of availableShifts"><input name="select1" type="checkbox" [value]="shift" (change)="manageClick($event)" checked></td>
+          <td><button type="button" class="btn btn-success" (click)="addEmployeeToList()"> Add </button></td>
+        </tr>
+      </tbody>
+    </table>
+    <h5><span class="badge badge-info">Employees Added</span></h5>
+    <table table class="table table-striped" [mfData]="employeesAdded" #mf="mfDataTable" [mfRowsOnPage]="5">
+      <thead>
+        <tr >
+          <th>#</th>
+          <th>
+              <mfDefaultSorter by="firstName">First Name</mfDefaultSorter>
+          </th>
+          <th>
+              <mfDefaultSorter by="Last Name">First Name</mfDefaultSorter>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let emp1 of mf.data; let i = index;"> 
+          <td>{{i+1}}</td>
+          <td>{{emp1.firstName}}</td>
+          <td>{{emp1.lastName}}</td>
+        </tr>
+      </tbody>
+      <tfoot>
+          <tr>
+              <td colspan="4">
+                  <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+              </td>
+          </tr>
+      </tfoot>
+    </table>
+  </div>
+
+  <div>
+    <h5><span class="badge badge-warning">Search Station</span></h5>
+    <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Station</th>
+            <th *ngFor="let shift of availableShiftsHeader" style="width:50px; max-width:50px;">{{shift}}</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <select id="staSel" style="width:100%;" (change)="selectStationOption($event)">
+                <option value=""></option>
+                <option [value]="sta.id" *ngFor="let sta of stations">{{sta.name}}</option>
+              </select></td>
+            <td *ngFor="let shift of availableShifts"><input name="select1" type="checkbox" [value]="shift" (change)="manageStationClick($event)"></td>
+            <td><button type="button" class="btn btn-success" (click)="addStationToList()"> Add </button></td>
+          </tr>
+        </tbody>
+      </table>
+    
+      <h5><span class="badge badge-warning">Stations Added</span></h5>
+      <table table class="table table-striped" [mfData]="stationsAdded" #mf2="mfDataTable" [mfRowsOnPage]="5">
+          <thead>
+              <tr >
+                <th>#</th>
+                <th>
+                    <mfDefaultSorter by="name">Name</mfDefaultSorter>
+                </th>
+                <th><mfDefaultSorter by="shift">Shift</mfDefaultSorter></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let sta of mf2.data; let i = index;"> 
+                <td>{{i+1}}</td>
+                <td>{{sta.name}}</td>
+                <td>{{sta.shift}}</td>
+              </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4">
+                        <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+                    </td>
+                </tr>
+            </tfoot>
+      </table>
+
+  </div>
+
+  <button type="submit" class="btn btn-primary">Solve</button>  
+</form>

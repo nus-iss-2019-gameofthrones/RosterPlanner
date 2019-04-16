@@ -1,0 +1,10 @@
+<br>
+<form name="form" #f="ngForm" (ngSubmit)="updateStation()" novalidate class="feedback-form">
+  <div class="form-group">
+    <label>Name</label>
+    <input type="text" [(ngModel)]="station.name" name="name" #name="ngModel" class="form-control" placeholder="Name" aria-label="name" aria-describedby="basic-addon1">
+  </div>
+
+  <button type="button" class="btn btn-danger" routerLink="/stations"> Back </button>
+  <button type="submit" class="btn btn-primary">Update</button>
+</form>

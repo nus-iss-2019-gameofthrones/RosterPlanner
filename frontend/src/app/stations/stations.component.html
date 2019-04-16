@@ -1,0 +1,23 @@
+<div >
+    <br>
+    <button type="button" class="btn btn-success" routerLink="/createStation"> Create New Station <i class="fa fa-plus"></i></button>
+  </div>
+  <br>
+  <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let sta of stations; let i=index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ sta.name}}</td>
+          <td> 
+            <button type="button" class="btn btn-info" (click)="viewSta(sta.id)"> Edit / View </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>

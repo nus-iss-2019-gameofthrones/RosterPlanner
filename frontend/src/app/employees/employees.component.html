@@ -1,0 +1,25 @@
+<div >
+  <br>
+  <button type="button" class="btn btn-success" routerLink="/create"> Create New Employee <i class="fa fa-plus"></i></button>
+</div>
+<br>
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Grade</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of employees; let i=index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ emp.firstName}} {{emp.lastName}}</td>
+        <td>{{ emp.grade}}</td>
+        <td> 
+          <button type="button" class="btn btn-info" (click)="viewEmp(emp.id)"> Edit / View </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
