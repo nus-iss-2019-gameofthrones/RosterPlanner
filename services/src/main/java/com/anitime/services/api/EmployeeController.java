@@ -1,14 +1,22 @@
 package com.anitime.services.api;
 
-import com.anitime.services.db.EmployeeRepository;
-import com.anitime.services.model.Employee;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
-
-import javax.validation.ValidationException;
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
+
+import javax.validation.ValidationException;
+
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.anitime.services.db.EmployeeRepository;
+import com.anitime.services.model.Employee;
 
 @RestController
 @RequestMapping("/api/employee")

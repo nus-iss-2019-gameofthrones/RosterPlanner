@@ -1,0 +1,13 @@
+package com.isrs.roster
+
+import com.isrs.roster.shiftroster;
+import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScoreHolder;
+
+global HardSoftScoreHolder scoreHolder;
+
+rule "noNullEmployeeID"
+    when
+        JobAssignment( EmployeeID == null );
+    then
+        scoreHolder.addHardConstraintMatch(kcontext, -1);
+end

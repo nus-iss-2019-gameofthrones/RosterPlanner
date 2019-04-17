@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<solver>
+    <scanAnnotatedClasses/>
+
+    <scoreDirectorFactory>
+        <scoreDrl>shiftSchedule.drl</scoreDrl>
+    </scoreDirectorFactory>
+<termination>
+        <secondsSpentLimit>2</secondsSpentLimit>
+    </termination>
+
+</solver>
