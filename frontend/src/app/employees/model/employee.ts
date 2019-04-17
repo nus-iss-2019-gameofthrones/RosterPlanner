@@ -4,4 +4,5 @@ export interface Employee{
     lastName:String;
     grade:number;
     preferredShifts:number[];
+    station?:String
 }

@@ -18,6 +18,7 @@ import { CreateStationComponent } from './create-station/create-station.componen
 import { ViewStationComponent } from './view-station/view-station.component';
 import { DatePickerModule} from '@syncfusion/ej2-angular-calendars';
 import {DataTableModule} from "angular-6-datatable";
+import { PlannerResultsComponent } from './planner-results/planner-results.component';
 
 const appRoutes :Routes = [
   {
@@ -58,6 +59,10 @@ const appRoutes :Routes = [
     component:ViewStationComponent
   },
   {
+    path:'plannerResults/:shifts',
+    component:PlannerResultsComponent
+  },
+  {
     path:'**',
     component:NotFoundComponent
   }
@@ -75,7 +80,8 @@ const appRoutes :Routes = [
     CreateEmployeeComponent,
     ViewEmployeeComponent,
     CreateStationComponent,
-    ViewStationComponent
+    ViewStationComponent,
+    PlannerResultsComponent
   ],
   imports: [
     BrowserModule,
