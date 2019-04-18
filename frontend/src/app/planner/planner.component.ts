@@ -23,6 +23,7 @@ export class PlannerComponent implements OnInit {
   selectedEmp: Employee;
   staAvailableShifts: number[] = [];
   selectedStation: Station;
+  selectPreferredStation: number;
 
   //employees array to add
   public employeesAdded: Employee[] = [];
@@ -116,7 +117,10 @@ export class PlannerComponent implements OnInit {
   }
 
   addEmployeeToList(){
-    this.selectedEmp.preferredShifts = this.empAvailableShifts;
+    this.selectedEmp.preferredShifts = [];
+    this.selectedEmp.shifts = this.empAvailableShifts;
+    this.selectedEmp.preferredLocation = this.selectPreferredStation;
+console.log("Employee"+this.selectedEmp);
     this.employeesAdded.push(this.selectedEmp);
     var numberOfShifts=0;
     console.log(this.selectedEmp.grade);
@@ -135,11 +139,13 @@ export class PlannerComponent implements OnInit {
         firstName: this.selectedEmp.firstName,
         lastName: this.selectedEmp.lastName,
         grade: this.selectedEmp.grade,
-        preferredShifts: this.empAvailableShifts
+        preferredShifts: this.empAvailableShifts,
+        preferredLocation: this.selectPreferredStation
       };
       this.employeesAdded.push(empToadd);
     }
     console.log(this.employeesAdded); 
+
   }
 
   selectStationOption(event){    
@@ -148,6 +154,10 @@ export class PlannerComponent implements OnInit {
       this.selectedStation = this.stations.find(x=>x.id === +sta);
     }
     
+  }
+  selectStationOption2(event){
+    console.log("Target is "+event.target.value); 
+    this.selectPreferredStation = event.target.value;
   }
 
   manageStationClick(event){
@@ -190,7 +200,7 @@ export class PlannerComponent implements OnInit {
 
     this.apiService.solveResults(jsonEmp, jsonSta).subscribe(
       res => {
-        this.router.navigate(['/employees']);
+        this.router.navigate(['/plannerResults/', res]);
       },
       err => {
         alert("An error has occurred");

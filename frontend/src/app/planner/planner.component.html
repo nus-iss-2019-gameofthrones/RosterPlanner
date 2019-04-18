@@ -11,6 +11,7 @@
         <tr>
           <th>Employee</th>
           <th>Grade</th>
+          <th>Preferred Station</th>
           <th *ngFor="let shift of availableShiftsHeader" style="width:50px; max-width:50px;">{{shift}}</th>
           <th>Action</th>
         </tr>
@@ -23,6 +24,13 @@
               <option [value]="emp.id" *ngFor="let emp of employees">{{emp.firstName}} {{emp.lastName}}</option>
             </select></td>
           <td >{{ empGrade }}</td>
+          <td>
+            <select id="staPreferred" style="width:100%;" (change)="selectStationOption2($event)">
+              <option value=""></option>
+              <option [value]="sta.id" *ngFor="let sta of stations">{{sta.name}}</option>
+            </select>
+
+          </td>
           <td *ngFor="let shift of availableShifts"><input name="select1" type="checkbox" [value]="shift" (change)="manageClick($event)" checked></td>
           <td><button type="button" class="btn btn-success" (click)="addEmployeeToList()"> Add </button></td>
         </tr>
@@ -37,7 +45,7 @@
               <mfDefaultSorter by="firstName">First Name</mfDefaultSorter>
           </th>
           <th>
-              <mfDefaultSorter by="Last Name">First Name</mfDefaultSorter>
+              <mfDefaultSorter by="Last Name">Last Name</mfDefaultSorter>
           </th>
         </tr>
       </thead>

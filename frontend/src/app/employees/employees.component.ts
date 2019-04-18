@@ -23,6 +23,7 @@ export class EmployeesComponent implements OnInit {
     this.apiService.getAllEmployees().subscribe(
       res => {
         this.employees = res;
+        console.log(this.employees);
       },
       err => {alert("An error has occurred")}
     );

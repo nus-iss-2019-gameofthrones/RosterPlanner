@@ -59,7 +59,7 @@ const appRoutes :Routes = [
     component:ViewStationComponent
   },
   {
-    path:'plannerResults/:shifts',
+    path:'plannerResults/:assignments',
     component:PlannerResultsComponent
   },
   {

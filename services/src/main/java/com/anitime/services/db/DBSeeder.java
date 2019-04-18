@@ -65,6 +65,24 @@ import com.anitime.services.db.*;
           //Save default station
             Station sta1 = new Station("Admiralty");
             this.stationRepository.save(sta1);
+            Station sta10 = new Station("Yishun");
+            this.stationRepository.save(sta10);
+            Station sta2 = new Station("Sembawang");
+            this.stationRepository.save(sta2);
+            Station sta3 = new Station("Jurong East");
+            this.stationRepository.save(sta3);
+            Station sta4 = new Station("Joo Koon");
+            this.stationRepository.save(sta4);
+            Station sta5 = new Station("Yio Chu Kang");
+            this.stationRepository.save(sta5);
+            Station sta6 = new Station("Ang Mo Kio");
+            this.stationRepository.save(sta6);
+            Station sta7 = new Station("Bedok");
+            this.stationRepository.save(sta7);
+            Station sta8 = new Station("Choa Chu Kang");
+            this.stationRepository.save(sta8);
+            Station sta9 = new Station("Harbourfront");
+            this.stationRepository.save(sta9);
             
             System.out.println("Initialized database");
         }

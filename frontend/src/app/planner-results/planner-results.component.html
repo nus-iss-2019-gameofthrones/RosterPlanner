@@ -12,7 +12,16 @@
           <td>{{res.firstName}} {{res.lastName}}</td>
           <td >Grade {{res.grade}}</td>
           <td *ngFor="let shift of availableShiftsHeader; let i=index;">
-            <span *ngIf="res.preferredShifts[0] == i"><i class="fa fa-wrench" style="font-size: 28px;"></i>{{res}}</span>
+            <span *ngIf="res.preferredShifts[0] == i"><i class="fa fa-wrench" style="font-size: 28px;"></i>{{res.station[0]}}</span>
+            <span *ngIf="res.preferredShifts[1] == i"><i class="fa fa-wrench" style="font-size: 28px;"></i>{{res.station[1]}}</span>
+            <span *ngIf="res.preferredShifts[2] == i"><i class="fa fa-wrench" style="font-size: 28px;"></i>{{res.station[2]}}</span>
+            <span *ngIf="res.preferredShifts[3] == i"><i class="fa fa-wrench" style="font-size: 28px;"></i>{{res.station[3]}}</span>
+            <span *ngIf="res.preferredShifts[4] == i"><i class="fa fa-wrench" style="font-size: 28px;"></i>{{res.station[4]}}</span>
+            <span *ngIf="res.preferredShifts[5] == i"><i class="fa fa-wrench" style="font-size: 28px;"></i>{{res.station[5]}}</span>
+            <span *ngIf="res.preferredShifts[6] == i"><i class="fa fa-wrench" style="font-size: 28px;"></i>{{res.station[6]}}</span>
+            <span *ngIf="res.preferredShifts[7] == i"><i class="fa fa-wrench" style="font-size: 28px;"></i>{{res.station[7]}}</span>
+            <span *ngIf="res.preferredShifts[8] == i"><i class="fa fa-wrench" style="font-size: 28px;"></i>{{res.station[8]}}</span>
+            <span *ngIf="res.preferredShifts[9] == i"><i class="fa fa-wrench" style="font-size: 28px;"></i>{{res.station[9]}}</span>
           </td>
         </tr>
       </tbody>

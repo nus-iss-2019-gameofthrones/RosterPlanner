@@ -3,6 +3,8 @@ export interface Employee{
     firstName:String;
     lastName:String;
     grade:number;
+    shifts?:number[];
     preferredShifts:number[];
-    station?:String
+    station?:String[];
+    preferredLocation?:number;
 }
