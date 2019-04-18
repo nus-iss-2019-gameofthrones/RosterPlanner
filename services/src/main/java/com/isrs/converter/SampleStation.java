@@ -7,7 +7,9 @@ public class SampleStation {
 	private int shift;
 	
 	
-	
+	public SampleStation() {
+		
+	}
 	
 	public int getShift() {
 		return shift;

@@ -3,16 +3,10 @@ package com.isrs.roster;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.optaplanner.core.api.solver.Solver;
 import org.optaplanner.core.api.solver.SolverFactory;
-
-import com.isrs.roster.Employee;
-import com.isrs.roster.Job;
-import com.isrs.roster.JobAssignment;
-import com.isrs.roster.JobSchedule;
 
 public class OptaPlannerUnitTest {
 
@@ -49,6 +43,7 @@ public class OptaPlannerUnitTest {
 		List<Integer> preferedLocation2 = new ArrayList<Integer>();
 		shiftAvailabilty2.add(2);
 		shiftAvailabilty2.add(3);
+		shiftAvailabilty2.add(5);
 		preferedLocation2.add(5);
 		emp2.setPreferredLocation(preferedLocation2);
 		emp2.setShiftAvailability(shiftAvailabilty2);
@@ -63,6 +58,7 @@ public class OptaPlannerUnitTest {
 		List<Integer> preferedLocation3 = new ArrayList<Integer>();
 		shiftAvailabilty3.add(2);
 		shiftAvailabilty3.add(3);
+		shiftAvailabilty3.add(1);
 		preferedLocation3.add(5);
 		emp3.setPreferredLocation(preferedLocation3);
 		emp3.setShiftAvailability(shiftAvailabilty3);
@@ -128,6 +124,11 @@ public class OptaPlannerUnitTest {
 		//jobAssignment.setJob(jobList.get(2));
 		//JobAssignmentList.add(jobAssignment);
 
+		System.out.println("Before solving schedule...................");
+		for (JobAssignment jobAssignment : JobAssignmentList) {
+			System.out.println("JobID: " + jobAssignment.getJob().getJobID() + ", Shift: " + jobAssignment.getJob().getShift() + ", Location: " + jobAssignment.getJob().getJobLocation() + ", Employee: " + jobAssignment.getEmployee().getName());
+		}
+		
 		System.out.println("JobAssignmentList:"+JobAssignmentList.size());
 		System.out.println("JobAssignmentList:"+JobAssignmentList);
 		return JobAssignmentList;
@@ -152,8 +153,13 @@ public class OptaPlannerUnitTest {
 		SolverFactory<JobSchedule> solverFactory = SolverFactory.createFromXmlResource("courseScheduleSolverConfiguration.xml");
 		Solver<JobSchedule> solver = solverFactory.buildSolver();
 		JobSchedule solvedCourseSchedule = solver.solve(unsolvedCourseSchedule);
-		System.out.println("Solution:"+solvedCourseSchedule.toString());
+		// System.out.println("Solution:"+solvedCourseSchedule.toString());
+		System.out.println("Best Score:(Hard " + solvedCourseSchedule.getScore().getHardScore() + ", Soft " + solvedCourseSchedule.getScore().getSoftScore() + ")");
 		
+		System.out.println("After solving schedule...................");
+		for (JobAssignment jobAssignment : solvedCourseSchedule.getJobAssignmentList()) {
+			System.out.println("JobID: " + jobAssignment.getJob().getJobID() + ", Shift: " + jobAssignment.getJob().getShift() + ", Location: " + jobAssignment.getJob().getJobLocation() + ", Employee: " + jobAssignment.getEmployee().getName());
+		}
         
 		// Assert.assertNotNull(solvedCourseSchedule.getScore());
 		// Assert.assertEquals(0, solvedCourseSchedule.getScore().getHardScore());

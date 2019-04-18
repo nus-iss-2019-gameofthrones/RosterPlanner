@@ -66,4 +66,10 @@ public class JobSchedule extends AbstractPersistable {
     public void setScore(HardSoftScore score) {
         this.score = score;
     }
+
+    // public String toString() {
+    //     for (JobAssignment jobAssignment : getJobAssignmentList()){
+
+    //     }
+    // }
 }
