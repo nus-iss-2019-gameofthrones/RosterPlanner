@@ -12,6 +12,7 @@ public class SampleEmployee {
     private String lastName;
     private int grade;
     private int[] shifts;
+    private int preferredLocation;
     private int[] preferredShifts;
         
 
@@ -25,6 +26,14 @@ public class SampleEmployee {
         this.grade = grade;
     }
     
+	public int getPreferredLocation() {
+		return preferredLocation;
+	}
+
+	public void setPreferredLocation(int preferredLocation) {
+		this.preferredLocation = preferredLocation;
+	}
+
 	public int[] getShifts() {
 		return shifts;
 	}
