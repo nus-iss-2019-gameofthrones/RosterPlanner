@@ -155,7 +155,7 @@ public class OptaPlannerUnitTest {
 		Solver<JobSchedule> solver = solverFactory.buildSolver();
 		JobSchedule solvedCourseSchedule = solver.solve(unsolvedCourseSchedule);
 		// System.out.println("Solution:"+solvedCourseSchedule.toString());
-		System.out.println("Best Score: " + solvedCourseSchedule.getScore().getHardScore());
+		System.out.println("Best Score:(Hard " + solvedCourseSchedule.getScore().getHardScore() + ", Soft " + solvedCourseSchedule.getScore().getSoftScore() + ")");
 		for (JobAssignment jobAssignment : solvedCourseSchedule.getJobAssignmentList()) {
 			System.out.println("JobID: " + jobAssignment.getJob().getJobID() + ", Shift: " + jobAssignment.getJob().getShift() + ", Location: " + jobAssignment.getJob().getJobLocation() + ", Employee: " + jobAssignment.getEmployee().getName());
 		}
