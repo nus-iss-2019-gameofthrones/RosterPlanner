@@ -13,10 +13,13 @@ import { Assignment } from '../employees/model/assignment';
 export class PlannerResultsComponent implements OnInit {
   availableShiftsHeader: String[] = ["Mon AM", "Mon PM", "Tue AM", "Tue PM", "Wed AM", "Wed PM", "Thu AM", "Thu PM", "Fri AM", "Fri PM"];
   availableShifts: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-  employees: Employee[];
-  stations: Station[];
-  assignments:Assignment[];
+  employees: Employee[] = [];
+  stations: Station[] = [];
+  assignments:Assignment[] = [];
   assignmentsStr:string;
+  resultEmp:Employee[] = [];
+  resultEmpID:number[] = [];
+  stationToAdd: String = "";
 
   results: Employee[] = [
     {
@@ -64,13 +67,10 @@ export class PlannerResultsComponent implements OnInit {
 
   ngOnInit() {    
     this.getAllEmployees();
-    this.getAllStations();
 
     this.assignmentsStr = this.route.snapshot.params.assignments;
     this.assignments = JSON.parse(this.assignmentsStr);
 
-    console.log("Results String"+this.assignmentsStr);
-    console.log("Results "+this.assignments);
   }
 
   public getAllEmployees(){
@@ -78,6 +78,7 @@ export class PlannerResultsComponent implements OnInit {
       res => {
         this.employees = res;
         console.log(this.employees);
+        this.getAllStations();
       },
       err => {alert("An error has occurred")}
     );
@@ -88,9 +89,66 @@ export class PlannerResultsComponent implements OnInit {
       res => {
         this.stations = res;
         console.log(this.stations);
+        this.setStuff();
       },
       err => {alert("An error has occurred")}
     );
+  }
+
+  public setStuff(){
+    for(let assignment of this.assignments){
+      if(assignment.hasOwnProperty("employee")){
+        console.log("Yes "+assignment.employee.name);
+        console.log("Yes "+assignment.job.jobLocation);
+      }
+
+      var foundEmp = this.resultEmpID.indexOf(assignment.employee.employeeID);
+      var stationID = assignment.job.jobLocation;
+      
+      for(let station of this.stations){
+        console.log("Searching");
+        if(station.id == stationID){
+          this.stationToAdd = station.name
+          console.log("Station is "+this.stationToAdd);
+          break;
+        }
+      }
+
+      if(foundEmp == -1){
+        let name1;
+        let name2;
+
+        for(let emp of this.employees){
+          if(emp.id == assignment.employee.employeeID){
+            name1 = emp.firstName;
+            name2 = emp.lastName;
+            break;
+          }
+        }
+        
+        let employee:Employee = {
+          id: assignment.employee.employeeID,
+          firstName: name1,
+          lastName: name2,
+          grade: assignment.employee.employeeGrade,
+          preferredShifts: [assignment.job.shift],
+          station: [this.stationToAdd]
+        }
+
+        this.resultEmp.push(employee);
+        this.stationToAdd="";
+      }else{
+        for(let emp of this.resultEmp){
+          if(emp.id == assignment.employee.employeeID){
+            emp.preferredShifts.push(assignment.job.shift);
+            emp.station.push(this.stationToAdd);
+            break;
+          }
+        }
+      }
+
+      console.log(this.resultEmp);
+    }
   }
 /*
 this.route.queryParams.subscribe(params => {

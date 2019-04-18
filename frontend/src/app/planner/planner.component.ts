@@ -200,7 +200,9 @@ console.log("Employee"+this.selectedEmp);
 
     this.apiService.solveResults(jsonEmp, jsonSta).subscribe(
       res => {
-        this.router.navigate(['/plannerResults/', res]);
+        let results = JSON.stringify(res);
+        console.log("Please see here: "+results);
+        this.router.navigate(['/plannerResults/', results]);
       },
       err => {
         alert("An error has occurred");

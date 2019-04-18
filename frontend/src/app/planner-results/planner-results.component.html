@@ -8,7 +8,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let res of results" >
+        <tr *ngFor="let res of resultEmp" >
           <td>{{res.firstName}} {{res.lastName}}</td>
           <td >Grade {{res.grade}}</td>
           <td *ngFor="let shift of availableShiftsHeader; let i=index;">

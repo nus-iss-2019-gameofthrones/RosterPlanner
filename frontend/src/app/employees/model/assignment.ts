@@ -1,5 +1,16 @@
 export interface Assignment{
-    employee:number;
-    station:number;
-    shift:number;
+    employee:{
+        name:String,
+        employeeID:number,
+        shift:number,
+        employeeGrade:number,
+        preferredLocation:number[],
+        shiftAvailability:number[],
+
+    },
+    job:{
+        jobID:number,
+        jobLocation:number,
+        shift:number
+    }
 }
