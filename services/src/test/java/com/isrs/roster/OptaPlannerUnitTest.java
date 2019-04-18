@@ -49,6 +49,7 @@ public class OptaPlannerUnitTest {
 		List<Integer> preferedLocation2 = new ArrayList<Integer>();
 		shiftAvailabilty2.add(2);
 		shiftAvailabilty2.add(3);
+		shiftAvailabilty2.add(5);
 		preferedLocation2.add(5);
 		emp2.setPreferredLocation(preferedLocation2);
 		emp2.setShiftAvailability(shiftAvailabilty2);
@@ -63,6 +64,7 @@ public class OptaPlannerUnitTest {
 		List<Integer> preferedLocation3 = new ArrayList<Integer>();
 		shiftAvailabilty3.add(2);
 		shiftAvailabilty3.add(3);
+		shiftAvailabilty3.add(1);
 		preferedLocation3.add(5);
 		emp3.setPreferredLocation(preferedLocation3);
 		emp3.setShiftAvailability(shiftAvailabilty3);
@@ -152,8 +154,11 @@ public class OptaPlannerUnitTest {
 		SolverFactory<JobSchedule> solverFactory = SolverFactory.createFromXmlResource("courseScheduleSolverConfiguration.xml");
 		Solver<JobSchedule> solver = solverFactory.buildSolver();
 		JobSchedule solvedCourseSchedule = solver.solve(unsolvedCourseSchedule);
-		System.out.println("Solution:"+solvedCourseSchedule.toString());
+		// System.out.println("Solution:"+solvedCourseSchedule.toString());
 		
+		for (JobAssignment jobAssignment : solvedCourseSchedule.getJobAssignmentList()) {
+			System.out.println("Shift: " + jobAssignment.getJob().getShift() + ", Location: " + jobAssignment.getJob().getJobLocation() + ", Employee: " + jobAssignment.getEmployee().getName());
+		}
         
 		// Assert.assertNotNull(solvedCourseSchedule.getScore());
 		// Assert.assertEquals(0, solvedCourseSchedule.getScore().getHardScore());
