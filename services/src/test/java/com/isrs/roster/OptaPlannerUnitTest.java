@@ -157,7 +157,7 @@ public class OptaPlannerUnitTest {
 		// System.out.println("Solution:"+solvedCourseSchedule.toString());
 		
 		for (JobAssignment jobAssignment : solvedCourseSchedule.getJobAssignmentList()) {
-			System.out.println("Shift: " + jobAssignment.getJob().getShift() + ", Location: " + jobAssignment.getJob().getJobLocation() + ", Employee: " + jobAssignment.getEmployee().getName());
+			System.out.println("JobID: " + jobAssignment.getJob().getJobID() + ", Shift: " + jobAssignment.getJob().getShift() + ", Location: " + jobAssignment.getJob().getJobLocation() + ", Employee: " + jobAssignment.getEmployee().getName());
 		}
         
 		// Assert.assertNotNull(solvedCourseSchedule.getScore());
