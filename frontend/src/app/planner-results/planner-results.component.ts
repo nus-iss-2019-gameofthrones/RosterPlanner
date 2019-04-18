@@ -16,6 +16,7 @@ export class PlannerResultsComponent implements OnInit {
   employees: Employee[];
   stations: Station[];
   assignments:Assignment[];
+  assignmentsStr:string;
 
   results: Employee[] = [
     {
@@ -65,8 +66,10 @@ export class PlannerResultsComponent implements OnInit {
     this.getAllEmployees();
     this.getAllStations();
 
-    this.assignments = this.route.snapshot.params.assignments;
-    
+    this.assignmentsStr = this.route.snapshot.params.assignments;
+    this.assignments = JSON.parse(this.assignmentsStr);
+
+    console.log("Results String"+this.assignmentsStr);
     console.log("Results "+this.assignments);
   }
 
