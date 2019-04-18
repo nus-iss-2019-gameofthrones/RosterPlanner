@@ -82,7 +82,10 @@ public class OptaPlannerController {
 			employeelist[i].setName(emp[i].getFirstName() + emp[i].getLastName());
 			employeelist[i].setEmployeeID(emp[i].getId());
 			employeelist[i].setEmployeeGrade(emp[i].getGrade());
-			employeelist[i].setPreferredLocation(new ArrayList<>());
+			
+			List<Integer> prefLocationList = new ArrayList<>();
+			prefLocationList.add(emp[i].getPreferredLocation());
+			employeelist[i].setPreferredLocation(prefLocationList);
 			
 			List<Integer> shiftList = new ArrayList<>();
 			for (int shift : emp[i].getShifts()) {
