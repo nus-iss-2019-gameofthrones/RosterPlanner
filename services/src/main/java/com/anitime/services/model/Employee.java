@@ -31,7 +31,7 @@ public class Employee {
 		this.preferredShifts = preferredShifts;
 	}
 
-	protected Employee() {
+	public Employee() {
 		Random rand = new Random();
 		int n = rand.nextInt(100000);
 		

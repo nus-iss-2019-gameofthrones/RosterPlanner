@@ -24,6 +24,7 @@ import com.isrs.roster.Job;
 @RequestMapping(value = "/springbootlearning")
 
 public class UIConverter {
+	/*
 
 	@RequestMapping(value = "/")
 	public String hello() {
@@ -141,7 +142,7 @@ public class UIConverter {
 				employeelist[i].setEmployeeID(emp[i].getId());
 				employeelist[i].setEmployeeGrade(emp[i].getGrade());
 				employeelist[i].setPreferredLocation(emp[i].getPreferredshifts());
-				employeelist[i].setShiftAvailability(emp[i].getShifts());
+				employeelist[i].setShiftAvailability(emp[i].getPrefferedShifts());
 
 				employeelistForPassing.add(employeelist[i]);
 
@@ -169,5 +170,5 @@ public class UIConverter {
 		// return Integer.toString(a);
 
 	}
-
+*/
 }

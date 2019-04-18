@@ -3,16 +3,10 @@ package com.isrs.roster;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.optaplanner.core.api.solver.Solver;
 import org.optaplanner.core.api.solver.SolverFactory;
-
-import com.isrs.roster.Employee;
-import com.isrs.roster.Job;
-import com.isrs.roster.JobAssignment;
-import com.isrs.roster.JobSchedule;
 
 public class OptaPlannerUnitTest {
 
@@ -130,6 +124,11 @@ public class OptaPlannerUnitTest {
 		//jobAssignment.setJob(jobList.get(2));
 		//JobAssignmentList.add(jobAssignment);
 
+		System.out.println("Before solving schedule...................");
+		for (JobAssignment jobAssignment : JobAssignmentList) {
+			System.out.println("JobID: " + jobAssignment.getJob().getJobID() + ", Shift: " + jobAssignment.getJob().getShift() + ", Location: " + jobAssignment.getJob().getJobLocation() + ", Employee: " + jobAssignment.getEmployee().getName());
+		}
+		
 		System.out.println("JobAssignmentList:"+JobAssignmentList.size());
 		System.out.println("JobAssignmentList:"+JobAssignmentList);
 		return JobAssignmentList;
@@ -156,6 +155,8 @@ public class OptaPlannerUnitTest {
 		JobSchedule solvedCourseSchedule = solver.solve(unsolvedCourseSchedule);
 		// System.out.println("Solution:"+solvedCourseSchedule.toString());
 		System.out.println("Best Score:(Hard " + solvedCourseSchedule.getScore().getHardScore() + ", Soft " + solvedCourseSchedule.getScore().getSoftScore() + ")");
+		
+		System.out.println("After solving schedule...................");
 		for (JobAssignment jobAssignment : solvedCourseSchedule.getJobAssignmentList()) {
 			System.out.println("JobID: " + jobAssignment.getJob().getJobID() + ", Shift: " + jobAssignment.getJob().getShift() + ", Location: " + jobAssignment.getJob().getJobLocation() + ", Employee: " + jobAssignment.getEmployee().getName());
 		}
