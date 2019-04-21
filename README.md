@@ -39,7 +39,7 @@ Our sincere thanks to NUS ISS Lecturer Sam Gu, who has guided us on the working 
 ## SECTION 5 : USER GUIDE
 
 
-### To run the system in other/local machine
+### To run the system in local machine
 
 First ensure you have all dependencies :
 * Apache Maven
