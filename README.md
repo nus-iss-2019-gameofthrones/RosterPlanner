@@ -48,8 +48,3 @@ Our sincere thanks to NUS ISS Lecturer Sam Gu, who has guided us on the working 
 
 
 ---
-## SECTION 7 : MISCELLANEOUS
-
-
-
----
