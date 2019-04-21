@@ -42,11 +42,11 @@ Our sincere thanks to NUS ISS Lecturer Sam Gu, who has guided us on the working 
 ### To run the system in other/local machine
 
 First ensure you have all dependencies :
-Apache Maven
-Java JDK 1.8
-NPM package manager
-Angular 6
-NodeJS
+* Apache Maven
+* Java JDK 1.8
+* NPM package manager
+* Angular 6
+* NodeJS
 
 Prepare back-end of the service
 1. Open up your command prompt/terminal
