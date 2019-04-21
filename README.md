@@ -23,8 +23,8 @@ Our sincere thanks to NUS ISS Lecturer Sam Gu, who has guided us on the working 
 
 | Official Full Name  | Student ID (MTech Applicable)  | Work Items (Who Did What) | Email (Optional) |
 | :------------ |:---------------:| :-----| :-----|
-| ANI SIVARAM PORKALANGAD AYYAPPAN | A0195404E | Project Planning, Requirement Specifications, Project Report, System Design, Testing, Project Video| e0385035@u.nus.edu |
-| GARY NG JIAN ZHE | A0195367N | System Design, System Architecture, Rules definition, Optaplanner solver building, Integration of front-end & back-end, Bug fixing and back-end code development, Testing & Project Report | e0384998@u.nus.edu |
+| ANI SIVARAM PORKALANGAD AYYAPPAN | A0195404E | Project Planning, Requirement Specifications, Project Report, System Design, Testing, Project Video| E0385035@u.nus.edu |
+| GARY NG JIAN ZHE | A0195367N | System Design, System Architecture, Rules definition, Optaplanner solver building, Integration of front-end & back-end, Bug fixing and back-end code development, Testing & Project Report | E0384998@u.nus.edu |
 | MOHANADAS GANGA SOOREJ | A0195397J |Frontend Code development, Bug fixing and back-end code development, Integration of front-end & back-end| E0385028@u.nus.edu |
 | RITESH MUNJAL | A0195304H | System Design & System Architecture, Optaplanner solver building, Bug fixing and back-end code development, Integration of front-end & back-end, Testing & Project report| E0384935@u.nus.edu |
 | SANTHIYAPILLAI RAJEEVAN PAUL | A0195399E |System Design & System Architecture, Optaplanner solver building, Bug fixing and back-end code development, Integration of front-end & back-end, Testing| E0385030@u.nus.edu |
