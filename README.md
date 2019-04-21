@@ -38,13 +38,40 @@ Our sincere thanks to NUS ISS Lecturer Sam Gu, who has guided us on the working 
 ---
 ## SECTION 5 : USER GUIDE
 
-`<Github File Link>` : <https://github.com/nus-iss-2019-gameofthrones/RosterPlanner/blob/master/Throne_UserManual_TestCase.pdf>
 
+### To run the system in other/local machine
+
+First ensure you have all dependencies :
+Apache Maven
+Java JDK 1.8
+NPM package manager
+Angular 6
+NodeJS
+
+Prepare back-end of the service
+1. Open up your command prompt/terminal
+2. Do ``git clone`` https://github.com/nus-iss-2019-gameofthrones/RosterPlanner
+3. Go into the ‘Services’ project folder
+4. Run ``mvn clean install -U`` to compile the project
+5. Run ``mvn spring-boot:run`` to start the application
+6. Now back-end is deployed on *localhost:8082*
+
+Prepare front-end of the service
+1. Open up your command prompt/terminal
+2. Go into the ‘Frontend’ project folder
+3. ``Npm install``
+4. ``Ng serve`` 
+5. No fornt-end is started on *localhost:4200*
+6. Open a browser and got to *localhost:4200*
+
+For more detailed guide, please read the user guide attached on below link
+
+<https://github.com/nus-iss-2019-gameofthrones/RosterPlanner/blob/master/Throne_UserManual_TestCase.pdf>
 
 ---
 ## SECTION 6 : PROJECT REPORT / PAPER
 
-`<Github File Link>` <https://github.com/nus-iss-2019-gameofthrones/RosterPlanner/blob/master/Reasoning%20systems%20project%20report%20final.pdf>
+<https://github.com/nus-iss-2019-gameofthrones/RosterPlanner/blob/master/Reasoning%20systems%20project%20report%20final.pdf>
 
 
 ---
