@@ -33,7 +33,7 @@ Our sincere thanks to NUS ISS Lecturer Sam Gu, who has guided us on the working 
 ---
 ## SECTION 4 : VIDEO OF SYSTEM MODELLING & USE CASE DEMO
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/y03K28tAMV4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![INTELLIGENT EMPLOYEE SCHEDULER](https://img.youtube.com/vi/y03K28tAMV4/0.jpg)](https://www.youtube.com/watch?v=y03K28tAMV4)
 
 ---
 ## SECTION 5 : USER GUIDE
